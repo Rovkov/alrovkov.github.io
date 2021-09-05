@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <style>
+    /* Resetting the browser stylesheet */
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+      background-color: #555;
+      color: #fff;
+    }
+
+    /* Styling the heading */
+    h1 {
+      display: flex;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+    }
+
+    /* Position the mouse pointer and
+            the background image */
+    .main_box,
+    .img,
+    .mouse {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .main_box {
+      cursor: none;
+      margin-top: 3em;
+    }
+
+    .img,
+    .mouse {
+      background-image: url('https://psv4.userapi.com/c537232/u142881785/docs/d16/e7a13ba0b388/33_1.png?extra=oU-g6j7omhJDG6j-TNwU0dDjQk6mDI-sVKQO3At8u05SwBj5PvPv9uhhI3fhVx3YRrMQBk-1Wd0eH8M8ogerhn9hoLPp2uPufbVWeNqGnuve96X3XixxN4CAObtsr6Jx0-kxs8VnYlIjm5UWje9qWRDgew');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* Reduce the brightness of the image */
+    .img {
+      background-image: url('https://psv4.userapi.com/c536436/u142881785/docs/d44/74226398fb2e/33_2.png?extra=vwL6NpC1N7GYAdLXR85k83AjYCUEU11ZfUr665i3eKzhQB_SnRHvStIS-XxDLRBnm1L5oLvVBuqoLNU8LQwRtfab9OVBdg0vYLwX3G54CB0JlYiATSyn04r_FTsxT-lj3xztq07zG8MZzZVSOrHTZcmOMg');
+    }
+
+    /* Make a circle with the clip-path property
+            for the spotlight in the effect */
+    .mouse {
+      clip-path: circle(5em at 0, 0);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main_box">
+    <div class="img"></div>
+    <div class="mouse"></div>
+  </div>
+
+  <script>
+    // Select the container box and the 
+    // mouse placeholder
+    let main = document.querySelector('.main_box');
+    let mouse = document.querySelector('.mouse');
+    // Add an event listener for detecting
+    // the movement of the mouse
+    main.addEventListener('mousemove',
+      (e) => {
+        // Use a circle with a clipPath
+        // and the offsetX and offsetY property
+        mouse.style.clipPath =
+          `circle(10em at ${e.offsetX}px ${e.offsetY}px)`;
+      });
+  </script>
+</body>
+
+</html>
